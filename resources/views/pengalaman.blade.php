@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>fasilkom</h1>
-    <a href="{{ url('/') }}">Lihat halaman welcome</a>
+    <h1>pengalaman</h1>
+    <li>sekretaris parasika</li>
+    <li>Sekpel musang</li>
+    <a href="{{ url('kontak') }}">Lihat halaman kontak</a>
+    
 </body>
 </html>
