@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Halaman About</title>
-     <style>
+    <title>Halaman home</title>
+    <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #000080;
+            background-color: #FF69B4;
             margin: 0;
             color: #ffffff;
             padding: 20px;
@@ -16,15 +16,15 @@
         #button {
             padding: 10px 20px;
             background-color: #ffffff;
-            color: #000080;
+            color: #FF69B4;
             text-decoration: none;
             border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>Selamat datang, ini tampilan About</h1>
-    <p>halo auf, ini about</p>
-    <a href="/" id="button">Lihat halaman home</a>
+    <h1>Ini tampilan home</h1>
+    <p>Selamat datang auf, ini halaman home</p>
+    <a href="/about" id="button">Lihat halaman about</a>
 </body>
 </html>
