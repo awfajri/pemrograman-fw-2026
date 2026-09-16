@@ -27,7 +27,7 @@ Route::post('/login', [LoginController::class, 'store'])
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard.index');
+        return view('dashboard');
     })->name('dashboard');
 
     Route::post('/logout', [LoginController::class, 'destroy'])
