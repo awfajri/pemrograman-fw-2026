@@ -20,24 +20,20 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-
             if (! Auth::attempt($credentials)) {
             return back()->withErrors([
                 'email' => 'Email atau password salah.',
             ])->onlyInput('email');
         }
         $request->session()->regenerate();
- 
         return redirect()->intended(route('dashboard'));
     }
  
     public function destroy(Request $request): RedirectResponse
     {
         Auth::logout();
- 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
- 
         return redirect('/login');
     }
 }

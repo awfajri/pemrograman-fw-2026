@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
     ]);
  
     User::create([
-        'name' => 'Kasir Rina',
+        'name' => 'Kasir Auf',
         'email' => 'kasir@barokahmart.test',
         'password' => Hash::make('password'),
         'role' => 'kasir',
