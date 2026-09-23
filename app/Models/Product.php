@@ -13,4 +13,7 @@ class Product extends Model
     public function transactionsDetails(){
         return $this->hasMany(TransactionDetail::class);
     }
+    public function getFormattedPriceAttribute(){
+        return 'Rp. ' . number_format($this->price, 0, ',', '.');
+    } 
 }
