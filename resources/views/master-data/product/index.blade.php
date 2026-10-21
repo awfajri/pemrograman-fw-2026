@@ -85,6 +85,11 @@
                                             class="text-indigo-600 hover:text-indigo-900">
                                             Ubah
                                         </a>
+                                        <form action="{{ route('products.destroy', $product) }}" method="POST" class="inline" onsubmit="return confirm('Yakin ingin menghapus produk {{ $product->name }}?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-red-600 hover:text-red-900 font-medium ml-2">Hapus</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @empty
