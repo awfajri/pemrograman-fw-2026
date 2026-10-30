@@ -9,9 +9,16 @@ use App\Http\Controllers\PosController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\UserController;
 
+
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
+
+Route::get('/buku/{kode}', function ($kode) { return "Detail buku dengan kode: $kode"; })->name('buku.kode');
+
+Route::get('/pengalaman', function() {
+    return view('pengalaman');
+})->name('pengalaman');
 
 Route::get('/about', function () {
     return view('about');
@@ -41,7 +48,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/reports/sales', [ReportController::class, 'sales'])->name('report.sales');
 });
 
+
 Route::middleware(['auth', 'role:admin,kasir'])->group(function () {
     Route::get('/pos', [PosController::class, 'index'])->name('pos.index');
     Route::post('/pos', [PosController::class, 'store'])->name('pos.store');
+    Route::get('/pos/{transaction}/struk', [PosController::class, 'struk'])->name('pos.struk');
 });
