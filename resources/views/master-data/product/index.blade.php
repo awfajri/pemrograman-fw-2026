@@ -7,7 +7,7 @@
             </a>
         </div>
     </x-slot>
-
+ 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-card>
@@ -16,7 +16,6 @@
                         {{ session('success') }}
                     </div>
                 @endif
-
                 <form method="GET" action="{{ route('products.index') }}" class="flex gap-3 mb-4">
                     <input type="text" name="search" value="{{ request('search') }}"
                         placeholder="Cari nama atau kode produk..."
@@ -32,9 +31,8 @@
                     </select>
                 
                     <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md">Cari</button>
-                    <a href="{{ route('products.index') }}" class="px-4 py-2 text-gray-500">Reset</a>
+                    <a href="{{ route('products.index') }}" class="px-4 py-2 text-gray-500">Reset</a> 
                 </form>
-
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
@@ -64,6 +62,7 @@
                                     @endif
                                 </td>
                                 <td class="px-4 py-2 text-sm text-center space-x-2">
+                                    <a href="{{ route('products.show', $product) }}" class="text-gray-600">Detail</a>
                                     <a href="{{ route('products.edit', $product) }}" class="text-indigo-600">Ubah</a>
                                     <form action="{{ route('products.destroy', $product) }}" method="POST"
                                         onsubmit="return confirm('Yakin ingin menghapus produk {{ $product->name }}?')" class="inline">
@@ -82,7 +81,7 @@
                         @endforelse
                     </tbody>
                 </table>
-
+ 
                 <div class="mt-4">
                     {{ $products->links() }}
                 </div>
